@@ -17,8 +17,6 @@ public class OrderController {
 
 	@PostMapping(value="/api/orders/{user}")
 	public String saveOrder(@PathVariable("user") String user, @RequestBody Order order) {
-		//return orderService.saveOrderDetails(user, order);
-		return "Order processed Successfully";
-	
+		return orderService.saveOrderDetails(user, order);
 	}
 }
