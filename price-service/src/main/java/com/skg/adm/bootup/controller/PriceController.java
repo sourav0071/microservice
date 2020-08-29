@@ -13,9 +13,16 @@ import com.skg.adm.bootup.services.PriceService;
 public class PriceController {
 	@Autowired
 	PriceService priceService;
+	
+	
 
 	@GetMapping(value="/api/price/{productId}")
 	public double getProductPrice(@PathVariable("productId") int productId) throws URISyntaxException {
 		return priceService.getPriceDetails(productId);
+	}
+	
+	@GetMapping(value="/test")
+	public String getTestProduct() throws URISyntaxException {
+		return priceService.getTestDetails();
 	}
 }
